@@ -12,6 +12,7 @@
   "scripts": {
     "build": "parcel build ./index.html",
     "clean": "rimraf dist && rm -rf node_modules",
+    "deploy": "./scripts/deploy-to-gh-pages.sh",
     "dev": "tsc --noEmit & parcel ./index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
