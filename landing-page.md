@@ -8,8 +8,8 @@ layout: default
 
 ### Burnr Wallet
 
-![Burnr Wallet](./projects/burnr/dist)
+![Burnr Wallet](./projects/burnr/dist/index.html)
 
 ### Smoldot Browser Demo
 
-![Smoldot Browser Demo](./projects/smoldot-browser-demo/dist)
+![Smoldot Browser Demo](./projects/smoldot-browser-demo/dist/index.html)
