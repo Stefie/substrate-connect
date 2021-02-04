@@ -3,14 +3,10 @@ import { ProviderInterface } from '@polkadot/rpc-provider/types';
 
 import { LazyProvider } from './types'; 
 
-// @TODO bundle multiple clients in substrate-connect
-import { SmoldotProvider }  from '@substrate/smoldot-provider';
-
 /**
  * Temporary hard-coded work around to test Wasm Light client 
  * until @substrate/connect is properly implemented
  */
-
 
 export const endpoints = {
   'kusama': 'wss://kusama-rpc.polkadot.io/',
@@ -26,52 +22,18 @@ export const users = {
   'westend': '12gG5fz9A7k7CgZeis8JesCoZiARDioonHYp5W9Vkwc6nFyB'
 }
 
-export const JS_WASM_PROVIDERS: Record<string, LazyProvider> = {
-  // 'Polkadot-Local-WasmProvider': {
-  //   description: 'Local WASM light client for polkadot-local network',
-  //   id: 'Polkadot-Local-WasmProvider',
-  //   network: 'Local Polkadot Network',
-  //   node: 'light',
-  //   source: 'browser',
-  //   endpoint: 'Light client running in Browser',
-  //   client: 'Wasm light',
-  //   start: (): Promise<ProviderInterface> =>
-  //     Promise.resolve(new SmoldotProvider()),
-  //   transport: 'WasmProvider',
-  // }
-  // 'Polkadot-Wasm-Light-Node': {
-  //   description: 'Local WASM light client for Polkadot',
-  //   id: 'Polkadot-WasmProvider',
-  //   network: 'Polkadot',
-  //   node: 'light',
-  //   source: 'browser tab',
-  //   endpoint: 'Light client running in Browser',
-  //   start: (): Promise<ProviderInterface> =>
-  //     Promise.resolve(new WasmProvider(polkadot())),
-  //   transport: 'WasmProvider',
-  // },
-  // 'Kusama-Wasm-Light-Node': {
-  //   description: 'Local WASM light client for Kusama',
-  //   id: 'Kusama-WasmProvider',
-  //   network: 'Kusama',
-  //   node: 'light',
-  //   source: 'browser tab',
-  //   endpoint: 'Light client running in Browser',
-  //   start: (): Promise<ProviderInterface> =>
-  //     Promise.resolve(new WasmProvider(kusama())),
-  //   transport: 'WasmProvider',
-  // },
-  // 'Westend-Wasm-Light-Node': {
-  //   description: 'Local WASM light client for Westend',
-  //   id: 'Westend-WasmProvider',
-  //   network: 'Westend',
-  //   node: 'light',
-  //   source: 'browser tab',
-  //   endpoint: 'Light client running in Browser',
-  //   start: (): Promise<ProviderInterface> =>
-  //     Promise.resolve(new WasmProvider(westend())),
-  //   transport: 'WasmProvider',
-  // },
+export const SMOLDOT_PROVIDERS: Record<string, LazyProvider> = {
+  'Westend-Wasm-Light-Node': {
+    description: 'Local Smoldot client for Westend',
+    id: 'Westend-Smoldot',
+    network: 'Westend',
+    node: 'light',
+    source: 'browser',
+    endpoint: 'Light client running in Browser',
+    // start: (): Promise<ProviderInterface> =>
+    //   Promise.resolve(new SmoldotProvider(westendConfig)),
+    transport: 'WasmProvider',
+  },
 };
 
 /**
@@ -128,4 +90,4 @@ export const REMOTE_PROVIDERS: Record<string, LazyProvider> = {
   },
 };
 
-export const ALL_PROVIDERS = {...REMOTE_PROVIDERS, ...JS_WASM_PROVIDERS};
+export const ALL_PROVIDERS = {...REMOTE_PROVIDERS, ...SMOLDOT_PROVIDERS};

@@ -33,6 +33,7 @@
     "@polkadot/util": "^5.5.2",
     "@polkadot/util-crypto": "^5.5.2",
     "@substrate/connect": "0.0.1",
+    "@substrate/smoldot-provider": "0.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",

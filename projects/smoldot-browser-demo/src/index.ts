@@ -18,6 +18,8 @@ window.onload = () => {
     }
 
     const chainSpec =  await response.text();
+
+    console.log('chainSpec', chainSpec)
     const provider = new SmoldotProvider(chainSpec);
     await provider.connect();
     try {
